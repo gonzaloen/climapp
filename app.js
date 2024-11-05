@@ -1,4 +1,3 @@
-// app.js
 export async function getWeather() {
     try {
         const city = document.getElementById("city").value.trim();
