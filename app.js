@@ -1,10 +1,8 @@
 export async function getWeather() {
     try {
         const city = document.getElementById("city").value.trim();
-        const apiKey = import.meta.env.NEXT_PUBLIC_API_KEY; // Usar import.meta.env para variables de entorno en frontend
+        const apiKey = "9c54ae518f01b4a75caf7490c67ff151"; // Usar directamente la clave API aquí
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
-
-        console.log("URL de solicitud:", url); // Log para verificar la URL
 
         const response = await fetch(url);
         
@@ -13,7 +11,6 @@ export async function getWeather() {
         }
 
         const data = await response.json();
-        console.log("Data recibida:", data); // Log de los datos obtenidos
 
         const weatherInfo = `
             <h2>Clima en ${data.name}</h2>
@@ -24,7 +21,7 @@ export async function getWeather() {
 
         document.getElementById("weather-result").innerHTML = weatherInfo;
     } catch (error) {
-        console.error("Error al obtener el clima:", error.message); // Log del error en consola
+        console.error("Error al obtener el clima:", error.message);
         document.getElementById("weather-result").innerHTML = `<p>Error: ${error.message}</p>`;
     }
 }
