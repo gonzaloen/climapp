@@ -1,6 +1,7 @@
+import { apiKey } from './config.js';
+
 async function getWeather() {
     const city = document.getElementById("city").value;
-    const apiKey = process.env.NEXT_PUBLIC_API_KEY || "9c54ae518f01b4a75caf7490c67ff151"; // Usar variable de entorno en producción
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
 
     try {
