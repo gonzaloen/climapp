@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación de Clima</title>
     <script type="module" src="app.js"></script>
+    <script type="module">
+    import { getWeather } from './app.js';
+    window.getWeather = getWeather; // Esto hace que la función esté disponible globalmente para ser llamada desde el botón.
+</script>
 
 </head>
 <body>
