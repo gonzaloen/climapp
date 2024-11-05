@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación de Clima</title>
-    <script type="module" src="app.js"></script>
-    <script type="module">
-    import { getWeather } from './app.js';
-    window.getWeather = getWeather; // Esto hace que la función esté disponible globalmente para ser llamada desde el botón.
-</script>
-
 </head>
 <body>
     <h1>Clima de tu Ciudad</h1>
     <input type="text" id="city" placeholder="Introduce el nombre de una ciudad" />
     <button onclick="getWeather()">Ver Clima</button>
     <div id="weather-result"></div>
-    <script src="app.js"></script>
+    
+    <!-- Importamos el módulo y hacemos que getWeather esté disponible globalmente -->
+    <script type="module">
+        import { getWeather } from './app.js';
+        window.getWeather = getWeather; // Hacemos que la función sea accesible globalmente
+    </script>
 </body>
 </html>
