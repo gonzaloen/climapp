@@ -2,7 +2,7 @@
 export async function getWeather() {
     try {
         const city = document.getElementById("city").value.trim();
-        const apiKey = "9c54ae518f01b4a75caf7490c67ff151";
+        const apiKey = process.env.NEXT_PUBLIC_API_KEY; // Leer desde la variable de entorno
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
 
         console.log("URL de solicitud:", url); // Log para verificar la URL
