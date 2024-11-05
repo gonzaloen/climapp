@@ -1,7 +1,7 @@
 export async function getWeather() {
     try {
         const city = document.getElementById("city").value.trim();
-        const apiKey = process.env.NEXT_PUBLIC_API_KEY; // Leer desde la variable de entorno
+        const apiKey = import.meta.env.NEXT_PUBLIC_API_KEY; // Usar import.meta.env para variables de entorno en frontend
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
 
         console.log("URL de solicitud:", url); // Log para verificar la URL
